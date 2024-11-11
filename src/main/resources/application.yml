@@ -11,6 +11,14 @@ spring:
   output:
     ansi:
       enabled: ALWAYS
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: tucorreo@example.com
+    password: your_password
+    properties:
+      mail.smtp.auth: true
+      mail.smtp.starttls.enable: true
   kafka:
     topics:
       customerNotification: customer-notification
@@ -21,7 +29,7 @@ spring:
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
     properties:
-      schema.registry.url: http://localhost:8081
+      schema.registry.url: ${HOST_SCHEMA_REGISTRY:http://localhost:8081}
       specific.avro.reader: true
 logging:
   level:

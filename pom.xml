@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>api.azure</groupId>
 	<artifactId>msv-kafka-consumer</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>msv-kafka-consumer</name>
 	<description>Project consumer with Spring Boot and kafka</description>
 	<url>https://github.com/josephmn/msv-kafka-consumer.git</url>
@@ -55,6 +55,13 @@
 			<version>7.0.1</version> <!-- Cambia la versión según tu instalación -->
 		</dependency>
 		<!-- Schema Avro - End -->
+
+		<!-- Email - Start -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-mail</artifactId>
+		</dependency>
+		<!-- Email - End -->
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
