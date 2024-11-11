@@ -1,0 +1,28 @@
+server:
+  port: 7071
+spring:
+  application:
+    name: msv-kafka-consumer
+    version: "@project.version@"
+  banner:
+    location: classpath:banner/banner-prod.txt
+  profiles:
+    active: prod
+  output:
+    ansi:
+      enabled: ALWAYS
+  kafka:
+    topics:
+      customerNotification: customer-notification
+    consumer:
+      group-id: my-group
+      bootstrap-servers: ${HOST_CONSUMER:localhost:9092}
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
+    properties:
+      schema.registry.url: http://localhost:8081
+      specific.avro.reader: true
+logging:
+  level:
+    root: INFO

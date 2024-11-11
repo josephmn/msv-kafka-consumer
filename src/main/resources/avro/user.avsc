@@ -1,0 +1,11 @@
+{
+  "type": "record",
+  "name": "user",
+  "namespace": "api.azure.kafka",
+  "fields": [
+    {"name": "id", "type": "string", "default": ""},
+    {"name": "name", "type": "string"},
+    {"name": "lastName", "type": "string"},
+    {"name": "email", "type": "string"}
+  ]
+}
